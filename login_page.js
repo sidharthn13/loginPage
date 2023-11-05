@@ -54,8 +54,26 @@ function toggle_button_display(){
 
 
 function account_login(){
-    
-}
+    users = JSON.parse(localStorage.getItem('users'))
+    user_name=document.getElementById('user_name').value
+    user_pass=document.getElementById('password').value 
+    if(users[`${user_name}`]==undefined){
+        alert('No such user exists');
+        clear_input_fields();
+    }
+    else{
+        if(users[`${user_name}`] != user_pass ){
+            alert('Wrong password');
+            document.getElementById('password').value = "";}
+        else{
+            alert('Successfully logged in');
+            clear_input_fields();
+        }
+        
+        }
+        
+    }
+
 
 //function gets called when create button is pressed
 function account_create(){
