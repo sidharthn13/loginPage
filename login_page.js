@@ -34,6 +34,11 @@ function display_login_popup(){
 
 //close account login popup
 function close_login_popup(){
+    clear_input_fields();
+    if (account_creation_in_progress){
+        toggle_button_display();
+        account_creation_in_progress = false;
+    }
     document.querySelector('.container').style.display = 'block'
     document.querySelector(".log_in_sign_up_popup").style.display='none'
 }
