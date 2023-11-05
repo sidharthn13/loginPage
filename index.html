@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <title>Login Page</title>
+        <link rel = "stylesheet" href="login_page.css">
+    </head>
+    <body>
+        <div class="container">
+            <div id="log_in_button">
+                <div class="text" onclick="log_in()">Log-In</div>
+            </div>
+            <div id="sign_up_button">
+                <div class='text' onclick="sign_up()">Sign-Up</div>
+            </div>
+        </div>
+
+        <div class="log_in_sign_up_popup">
+            <form id="form">
+               
+                <table id="table">
+                    <tr>
+                        <div id='user_id'>
+                        <td> 
+                            <label for="user_name" class='labels'>User Name: </label></td>
+                        <td><input type="text" id="user_name" name="user_name" maxlength="10" required>
+                        </td></div>
+                    </tr>
+                    <tr>    
+                        <div id="pass_word" >
+                            <td>
+                                <label for="password"  class='labels'>Password: </label></td>
+                                <td><input type="text" id="password" name="password" maxlength="10" required>
+                                
+                            </td></div>
+                    </tr>
+                </table>
+                <button type="button" id="account_entry" onclick="account_login()">Log-In</button>
+                <button type="submit" id="account_creation" onclick="account_create()">Create</button>
+            </form>
+        </div>
+       
+        <script src="login_page.js"></script>
+    </body>
+    
+</html>
