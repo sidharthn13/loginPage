@@ -123,11 +123,12 @@ font-weight: bold;}
         justify-content: center;
         align-items: center;
         position:absolute;
-        width:100vw;
+        width:96vw;
         height:80vh;
         background: rgba(13, 13, 13, 0.5);
-        left:0vw;
+        left: 2vw;
         top:10vh;
+    
     }
     
     #table{font-size: 15px;}
@@ -154,4 +155,10 @@ font-weight: bold;}
         left:25%;
         margin-top: 20px;
     }
+}
+
+@media only screen and (min-width:1200px){
+    body{background-image: url('Assets/website_background');
+        background-repeat: no-repeat;
+        background-size: cover;}
 }
