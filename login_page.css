@@ -105,5 +105,53 @@ font-weight: bold;}
 }
 
 @media only screen and (max-width:450px){
-    .labels{width:20vw}
+    
+    
+    .container{
+        position:absolute;
+        width:70vw;
+        height:70vh;
+        left:15vw;
+        top:15vh;
+        border-radius: 20px;
+        opacity:0.8;
+        background:rgba(13, 13, 13, 0.5);
+    }
+    
+    .log_in_sign_up_popup{
+        display:none;   /* set to grid in case of malfunction */
+        justify-content: center;
+        align-items: center;
+        position:absolute;
+        width:100vw;
+        height:80vh;
+        background: rgba(13, 13, 13, 0.5);
+        left:0vw;
+        top:10vh;
+    }
+    
+    #table{font-size: 15px;}
+
+    #account_entry{
+        display : none;
+        position:absolute;
+        width:50%;
+        left:25%;
+        margin-top: 20px;
+    }
+    
+    #account_creation{
+        display:none;
+        position:absolute;
+        width:50%;
+        left:25%;
+        margin-top: 20px;}
+    
+    #close_button{
+        position:absolute;
+        width:50%;
+        bottom:20%;
+        left:25%;
+        margin-top: 20px;
+    }
 }
