@@ -162,3 +162,8 @@ font-weight: bold;}
         background-repeat: no-repeat;
         background-size: cover;}
 }
+
+
+#user_portal{
+    display: none
+}

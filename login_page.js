@@ -1,5 +1,6 @@
 let users={}
 let account_creation_in_progress =false
+let current_user
 
 if(localStorage.getItem('users') == null){
     localStorage.setItem('users',JSON.stringify(users));
@@ -69,7 +70,9 @@ function account_login(){
             document.getElementById('password').value = "";}
         else{
             alert('Successfully logged in');
-            clear_input_fields();
+            clear_input_fields()
+            current_user = user_name
+            proceed_to_user_portal();
         }
         
         }}
@@ -114,3 +117,27 @@ function validate(){
     }
     else{return true}
 }
+
+
+//gets executed after successful login
+function proceed_to_user_portal(){
+    
+    document.querySelector(".log_in_sign_up_popup").style.display='none'
+    document.getElementById('user_portal').style.display = 'block'
+    document.getElementById('user_portal').innerHTML = `
+    <div id="welcome_message">Welcome ${current_user}</div>
+    <button type="button" id="sig_out_button" onclick="reset()">Sign Out</button>`
+}
+
+//gets executed when sign out is pressed
+function reset(){
+    document.getElementById('user_portal').innerHTML="";
+    document.getElementById('user_portal').style.display = 'none'
+    document.querySelector(".container").style.display='block'
+}
+
+
+
+
+
+
