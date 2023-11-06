@@ -1,10 +1,6 @@
 let users={}
 let account_creation_in_progress =false
 
-user_name=document.getElementById('user_name').value //delete these two line
-user_pass=document.getElementById('password').value  //delete these two lines
-
-
 if(localStorage.getItem('users') == null){
     localStorage.setItem('users',JSON.stringify(users));
 }
@@ -59,6 +55,7 @@ function toggle_button_display(){
 
 
 function account_login(){
+    if(validate()){
     users = JSON.parse(localStorage.getItem('users'))
     user_name=document.getElementById('user_name').value
     user_pass=document.getElementById('password').value 
@@ -75,14 +72,15 @@ function account_login(){
             clear_input_fields();
         }
         
-        }
+        }}
+    else{alert('Please fill in all fields')}    
         
     }
 
 
 //function gets called when create button is pressed
 function account_create(){
-    
+    if(validate()){
     users = JSON.parse(localStorage.getItem('users'))
     user_name=document.getElementById('user_name').value
     user_pass=document.getElementById('password').value 
@@ -90,6 +88,7 @@ function account_create(){
         users[`${user_name}`] = user_pass;
         localStorage.setItem('users',JSON.stringify(users))
         account_creation_in_progress = false
+        alert('Account created successfully')
         clear_input_fields()
         toggle_button_display()
         close_login_popup()
@@ -97,11 +96,21 @@ function account_create(){
     }
     else{
         alert('Account already exists');
-        clear_input_fields();}
+        clear_input_fields();}}
+    else{alert('Please fill in all fields')}
 }
 
 //function that clears the input form
 function clear_input_fields(){
     document.getElementById('user_name').value = "";
     document.getElementById('password').value = "";
+}
+
+//create an input field validating string
+function validate(){
+    if(document.getElementById('user_name').value =='' ||
+    document.getElementById('password').value == ''){
+        return false
+    }
+    else{return true}
 }
