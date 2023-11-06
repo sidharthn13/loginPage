@@ -8,13 +8,11 @@
     top:15vh;
     border-radius: 20px;
     opacity:0.8;
-    background:linear-gradient(55deg ,black,grey);
-    box-shadow: 0px 0px 25px black;
+    background:rgba(13, 13, 13, 0.5);
 }
 
 #log_in_button{
     position:absolute;
-    background-color:beige;
     
     width:40%;
     left:30%;
@@ -28,7 +26,6 @@
 
 #sign_up_button{
     position:absolute;
-    background-color: beige;
     width:40%;
     left:30%;
     height:10%;
@@ -38,12 +35,7 @@
     box-shadow: 0px 0px 5px whitesmoke
 }
 
-.text{
-    position:absolute;
-    left:20%;
-    top:10%;
-    font-weight: bolder;
-}
+
 
 .log_in_sign_up_popup{
     display:none;   /* set to grid in case of malfunction */
@@ -52,9 +44,8 @@
     position:absolute;
     width:40vw;
     height:60vh;
-    background:linear-gradient(55deg ,black,grey);
+    background: rgba(13, 13, 13, 0.5);
     border-radius: 20px;
-    box-shadow: 0px 0px 25px grey;
     left:30vw;
     top:20vh;
 }
@@ -83,5 +74,36 @@ font-weight: bold;}
     left:18%;
     margin-top: 20px;
 }
+@media only screen and (max-width: 1130px) {
+    .container{
+        position:absolute;
+        width:50vw;
+        height:70vh;
+        left:25vw;
+        top:15vh;
+        border-radius: 20px;
+        opacity:0.8;
+        background:rgba(13, 13, 13, 0.5);
+    }
+    
+}
 
-   
+@media only screen and (max-width:760px){
+    .log_in_sign_up_popup{
+        display:none;   /* set to grid in case of malfunction */
+        justify-content: center;
+        align-items: center;
+        position:absolute;
+        width:70vw;
+        height:80vh;
+        background: rgba(13, 13, 13, 0.5);
+        border-radius: 20px;
+        left:15vw;
+        top:10vh;
+    }
+    
+}
+
+@media only screen and (max-width:450px){
+    .labels{width:20vw}
+}
