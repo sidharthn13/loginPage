@@ -14,31 +14,75 @@
             
         </div>
 
-        <div class="log_in_sign_up_popup">
-            <form id="form">
-               
+        <div class="log_in_popup">
+            
+               <form id="'form">
                 <table id="table">
                     <tr>
                         <div id='user_id'>
                         <td> 
-                            <label for="user_name" class='labels'>User Name: </label></td>
-                        <td><input type="text" id="user_name" name="user_name" maxlength="15" required>
+                            <label for="email_id_login" class='labels'>Email-ID: </label></td>
+                        <td><input type="text" id="email_id_login" name="email_id_login" maxlength="15" required>
                         </td></div>
                     </tr>
                     <tr>    
                         <div id="pass_word" >
                             <td>
-                                <label for="password"  class='labels'>Password: </label></td>
-                                <td><input type="text" id="password" name="password" maxlength="15" required>
+                                <label for="password_login"  class='labels'>Password: </label></td>
+                                <td><input type="text" id="password_login" name="password_login" maxlength="15" required>
                                 
                             </td></div>
                     </tr>
                 </table>
                 <button type="button" id="account_entry" onclick="account_login()">Log-In</button>
+                <button type="button" id="close_button_login" onclick="close_login_popup()">Cancel</button>
+                </form>
+        </div>
+
+        <!--signup popup-->
+        <div class="sign_up_popup">
+            <form id="form">
+               
+                <table id="table2">
+                    <tr>
+                        
+                        <td> 
+                            <label for="email_id_sign_up" class='labels'>Email-ID: </label></td>
+                        <td><input type="text" id="email_id_sign_up" name="email_id_sign_up" maxlength="15" required>
+                        </td>
+                    </tr>
+                    <tr>    
+                        
+                            <td>
+                                <label for="password_sign_up"  class='labels'>Password: </label></td>
+                                <td><input type="text" id="password_sign_up" name="password_sign_up" maxlength="15" required>
+                                
+                            </td>
+                    </tr>
+                    <tr>    
+                        
+                        <td>
+                            <label for="user_name"  class='labels'>User name: </label></td>
+                            <td><input type="text" id="user_name" name="user_name" maxlength="15" required>
+                            
+                        </td>
+                </tr>
+                <tr>    
+                        
+                    <td>
+                        <label for="phone_number"  class='labels'>Phone NO: </label></td>
+                        <td><input type="text" id="phone_number" name="phone_number" maxlength="15" required>
+                        
+                    </td>
+                </tr>
+                </table>
+                
                 <button type="submit" id="account_creation" onclick="account_create()">Create</button>
-                <button type="button" id="close_button" onclick="close_login_popup()">Cancel</button>
+                <button type="button" id="close_button_sign_up" onclick="close_login_popup()">Cancel</button>
             </form>
         </div>
+        
+        <!--signup popup-->
 
         <div id = 'user_portal'></div>
        

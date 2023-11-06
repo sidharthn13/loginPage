@@ -42,7 +42,7 @@ body{position:relative;}
 
 
 
-.log_in_sign_up_popup{
+.log_in_popup{
     display:none;   /* set to grid in case of malfunction */
     justify-content: center;
     align-items: center;
@@ -59,7 +59,7 @@ body{position:relative;}
 font-weight: bold;}
 
 #account_entry{
-    display : none;
+    display : block;
     position:absolute;
     width:30%;
     left:52%;
@@ -73,7 +73,7 @@ font-weight: bold;}
     left:52%;
     margin-top: 20px;
 }
-#close_button{
+#close_button_login{
     position:absolute;
     width:30%;
     left:18%;
@@ -94,7 +94,7 @@ font-weight: bold;}
 }
 
 @media only screen and (max-width:760px){
-    .log_in_sign_up_popup{
+    .log_in_popup{
         display:none;   /* set to grid in case of malfunction */
         justify-content: center;
         align-items: center;
@@ -123,7 +123,7 @@ font-weight: bold;}
         background:rgba(13, 13, 13, 0.5);
     }
     
-    .log_in_sign_up_popup{
+    .log_in_popup{
         display:none;   /* set to grid in case of malfunction */
         justify-content: center;
         align-items: center;
@@ -153,7 +153,7 @@ font-weight: bold;}
         left:25%;
         margin-top: 20px;}
     
-    #close_button{
+    #close_button_login{
         position:absolute;
         width:50%;
         bottom:20%;

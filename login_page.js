@@ -1,5 +1,4 @@
 let users={}
-let account_creation_in_progress =false
 let current_user
 
 if(localStorage.getItem('users') == null){
@@ -13,65 +12,45 @@ form.addEventListener('submit',(e)=>{
 
 function log_in(){
     display_login_popup();
-    toggle_button_display();
+
 }
 
 function sign_up(){
     
-    display_login_popup();
-    account_creation_in_progress = true;
-    toggle_button_display();
+    //needs to e complete
 }
 
 //display account login popup
 function display_login_popup(){
     document.querySelector('.container').style.display = 'none'
-    document.querySelector(".log_in_sign_up_popup").style.display='grid'
+    document.querySelector(".log_in_popup").style.display='grid'
 }
 
 //close account login popup
 function close_login_popup(){
     clear_input_fields();
-    if (account_creation_in_progress){
-        toggle_button_display();
-        account_creation_in_progress = false;
-    }
     document.querySelector('.container').style.display = 'block'
-    document.querySelector(".log_in_sign_up_popup").style.display='none'
+    document.querySelector(".log_in_popup").style.display='none'
 }
-
-//function that toggles the create and login button displays
-function toggle_button_display(){
-    if(account_creation_in_progress==false){
-        
-        document.getElementById("account_entry").style.display = 'block'
-        document.getElementById("account_creation").style.display = 'none'
-    }
-    else{
-       
-        document.getElementById("account_entry").style.display = 'none'
-        document.getElementById("account_creation").style.display = 'block'
-        }
-    }
 
 
 function account_login(){
     if(validate()){
     users = JSON.parse(localStorage.getItem('users'))
-    user_name=document.getElementById('user_name').value
-    user_pass=document.getElementById('password').value 
-    if(users[`${user_name}`]==undefined){
+    email_id_login=document.getElementById('email_id_login').value
+    user_pass=document.getElementById('password_login').value 
+    if(users[`${email_id_login}`]==undefined){
         alert('No such user exists');
         clear_input_fields();
     }
     else{
-        if(users[`${user_name}`] != user_pass ){
-            alert('Wrong password');
-            document.getElementById('password').value = "";}
+        if(users[`${email_id_login}`] != user_pass ){
+            alert('Wrong password_login');
+            document.getElementById('password_login').value = "";}
         else{
             alert('Successfully logged in');
             clear_input_fields()
-            current_user = user_name
+            current_user = email_id_login
             proceed_to_user_portal();
         }
         
@@ -85,10 +64,10 @@ function account_login(){
 function account_create(){
     if(validate()){
     users = JSON.parse(localStorage.getItem('users'))
-    user_name=document.getElementById('user_name').value
-    user_pass=document.getElementById('password').value 
-    if(users[`${user_name}`]==undefined){
-        users[`${user_name}`] = user_pass;
+    email_id_login=document.getElementById('email_id_login').value
+    user_pass=document.getElementById('password_login').value 
+    if(users[`${email_id_login}`]==undefined){
+        users[`${email_id_login}`] = user_pass;
         localStorage.setItem('users',JSON.stringify(users))
         account_creation_in_progress = false
         alert('Account created successfully')
@@ -105,14 +84,14 @@ function account_create(){
 
 //function that clears the input form
 function clear_input_fields(){
-    document.getElementById('user_name').value = "";
-    document.getElementById('password').value = "";
+    document.getElementById('email_id_login').value = "";
+    document.getElementById('password_login').value = "";
 }
 
 //create an input field validating string
 function validate(){
-    if(document.getElementById('user_name').value =='' ||
-    document.getElementById('password').value == ''){
+    if(document.getElementById('email_id_login').value =='' ||
+    document.getElementById('password_login').value == ''){
         return false
     }
     else{return true}
@@ -122,7 +101,7 @@ function validate(){
 //gets executed after successful login
 function proceed_to_user_portal(){
     
-    document.querySelector(".log_in_sign_up_popup").style.display='none'
+    document.querySelector(".log_in_popup").style.display='none'
     document.getElementById('user_portal').style.display = 'block'
     document.getElementById('sign_out_button').style.display = 'block'
     document.getElementById('user_portal').innerHTML = `
