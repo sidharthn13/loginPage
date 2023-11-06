@@ -1,4 +1,9 @@
-.body{position:relative;}
+@font-face {
+    font-family: welcome_font;
+    src: url(/Assets/font.ttf);
+}
+
+body{position:relative;}
 
 .container{
     position:absolute;
@@ -165,5 +170,19 @@ font-weight: bold;}
 
 
 #user_portal{
-    display: none
+    display: none;
+    position:absolute;
+    left:50%;
+    top:50vh;
+    transform: translate(-50%,-50%);
+    font-size: 30px;
+    font-weight: bold;
+    color:antiquewhite;
+    font-family: welcome_font;
+
+}
+#sign_out_button{
+    display:none;
+    position:absolute;
+    right:0px;
 }

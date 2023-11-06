@@ -124,17 +124,20 @@ function proceed_to_user_portal(){
     
     document.querySelector(".log_in_sign_up_popup").style.display='none'
     document.getElementById('user_portal').style.display = 'block'
+    document.getElementById('sign_out_button').style.display = 'block'
     document.getElementById('user_portal').innerHTML = `
-    <div id="welcome_message">Welcome ${current_user}</div>
-    <button type="button" id="sig_out_button" onclick="reset()">Sign Out</button>`
+    Welcome, ${current_user}
+   `
 }
 
 //gets executed when sign out is pressed
 function reset(){
+    document.getElementById('sign_out_button').style.display = 'none'
     document.getElementById('user_portal').innerHTML="";
     document.getElementById('user_portal').style.display = 'none'
     document.querySelector(".container").style.display='block'
 }
+
 
 
 
