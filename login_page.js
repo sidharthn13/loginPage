@@ -118,8 +118,8 @@ function proceed_to_user_portal(){
     document.getElementById('user_portal').style.display = 'block'
     document.getElementById('sign_out_button').style.display = 'block'
     document.getElementById('user_portal').innerHTML = `
-    Welcome, ${current_user}
-   `
+    Welcome, ${current_user}`
+    document.querySelector(".bubbles").style.display ='flex'
 }
 
 //gets executed when sign out is pressed
@@ -128,6 +128,8 @@ function reset(){
     document.getElementById('user_portal').innerHTML="";
     document.getElementById('user_portal').style.display = 'none'
     document.querySelector(".container").style.display='block'
+    document.querySelector(".bubbles").style.display ='none'
+
 }
 
 
