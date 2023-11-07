@@ -150,8 +150,9 @@ function decrypt(str){
 
 //function to validate email input field on signup
 function validate_sign_up_email(){
-    let regex = /^[\w\.-]+@[\w\.-]+\.\w+$/
-    if(document.getElementById('email_id_sign_up').value == regex){
+    let regex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/
+    let match = regex.test(document.getElementById('email_id_sign_up').value)
+    if(match){
         return true;
     }
     else{
@@ -163,7 +164,8 @@ function validate_sign_up_email(){
 //function to validate phone number input field on signup
 function validate_sign_up_phone(){
     let regex = /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/
-    if(document.getElementById('phone_number').value == regex){
+    let match = regex.test(document.getElementById('phone_number').value )
+    if(match){
         return true;
     }
     else{
@@ -192,8 +194,8 @@ function validate_sign_up_password(){
 function validate_sign_up(){
     if( validate_sign_up_email() && validate_sign_up_phone() 
     && validate_sign_up_username() && validate_sign_up_password()){
-    return true;}
+        account_create();}
     else{
-        return false
+        alert('Please enter valid data')
     }
 }
