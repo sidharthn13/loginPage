@@ -148,4 +148,52 @@ function decrypt(str){
 }
 
 
+//function to validate email input field on signup
+function validate_sign_up_email(){
+    let regex = /^[\w\.-]+@[\w\.-]+\.\w+$/
+    if(document.getElementById('email_id_sign_up').value == regex){
+        return true;
+    }
+    else{
+        alert('Please enter a valid Email-ID');
+        document.getElementById('email_id_sign_up').value=''            
+    } 
+}
 
+//function to validate phone number input field on signup
+function validate_sign_up_phone(){
+    let regex = /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/
+    if(document.getElementById('phone_number').value == regex){
+        return true;
+    }
+    else{
+        alert('Please enter a valid phone number');
+        document.getElementById('phone_number').value=''
+    }
+}
+
+//function to validate username field on signup
+function validate_sign_up_username(){
+    if(document.getElementById('user_name').value ==''){
+        alert('Please fill in username')
+    }
+    else{
+        return true;}
+}
+//function to validate password field on signup
+function validate_sign_up_password(){
+    if(document.getElementById('password_sign_up').value == ''){
+        alert('Please enter your password')
+    }
+    else{return true;}
+}
+
+//function that checks validity of all fields on signup
+function validate_sign_up(){
+    if( validate_sign_up_email() && validate_sign_up_phone() 
+    && validate_sign_up_username() && validate_sign_up_password()){
+    return true;}
+    else{
+        return false
+    }
+}
