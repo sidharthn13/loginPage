@@ -49,7 +49,7 @@ function account_login(){
         clear_input_fields();
     }
     else{
-        if(users[`${email_id_login}`]['password'] != user_pass ){
+        if(decrypt(users[`${email_id_login}`]['password']) != user_pass ){
             alert('Wrong password_login');
             document.getElementById('password_login').value = "";}
         else{
@@ -76,7 +76,7 @@ function account_create(){
     
     const obj ={user_id:user_id,
                 phone:phone,
-                password:password} //write a hashing algo here
+                password:encrypt(password)} //write a hashing algo here
 
     if(users[`${email_id}`]==undefined){
         users[`${email_id}`] = obj;
@@ -125,8 +125,27 @@ function reset(){
 }
 
 
+//function to encrypt password
+function encrypt(str){
+    let result = ""
+    let ascii_values =[]
+    for(let i = 0;i<str.length;i++){
+        ascii_values.push(str.charCodeAt(i)+5)
+        result += String.fromCharCode(ascii_values[i]);
+    }
+    return result
+}
 
-
+// function to decrypt password
+function decrypt(str){
+    let result =''
+    let ascii_values = []
+    for(let i = 0;i<str.length;i++){
+        ascii_values.push(str.charCodeAt(i)-5)
+        result += String.fromCharCode(ascii_values[i]);
+    }
+    return result
+}
 
 
 
