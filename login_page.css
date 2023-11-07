@@ -127,7 +127,19 @@ font-weight: bold;}
         left:15vw;
         top:10vh;
     }
-    
+    .sign_up_popup{
+        display:none;   /* set to grid in case of malfunction */
+        justify-content: center;
+        align-items: center;
+        position:absolute;
+        width:70vw;
+        height:80vh;
+        background: rgba(13, 13, 13, 0.5);
+        border-radius: 20px;
+        left:15vw;
+        top:10vh;
+    }
+
 }
 
 @media only screen and (max-width:450px){
@@ -156,9 +168,24 @@ font-weight: bold;}
         top:10vh;
     
     }
+
+    .sign_up_popup{
+        display:none;   /* set to grid in case of malfunction */
+        justify-content: center;
+        align-items: center;
+        position:absolute;
+        width:96vw;
+        height:80vh;
+        background: rgba(13, 13, 13, 0.5);
+        left: 2vw;
+        top:10vh;
+    
+    }
     
     
     #table{font-size: 15px;}
+    #table2{font-size: 15px;}
+
 
     #account_entry{
         display : block;
@@ -176,6 +203,14 @@ font-weight: bold;}
         margin-top: 20px;}
     
     #close_button_login{
+        position:absolute;
+        width:50%;
+        bottom:20%;
+        left:25%;
+        margin-top: 20px;
+    }
+
+    #close_button_sign_up{
         position:absolute;
         width:50%;
         bottom:20%;
