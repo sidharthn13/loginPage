@@ -83,10 +83,14 @@ function account_create(){
         localStorage.setItem('users',JSON.stringify(users))
         
         alert('Account created successfully')
-        clear_input_fields()
-        close_sign_up_popup()
         
     }
+    else{
+        alert('User has an existing account')
+        
+    }
+    clear_input_fields()
+    close_sign_up_popup()
 }
 
 //function that clears the input form
