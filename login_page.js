@@ -1,6 +1,7 @@
 let users={}
 let current_user
 
+
 if(localStorage.getItem('users') == null){
     localStorage.setItem('users',JSON.stringify(users));
 }
