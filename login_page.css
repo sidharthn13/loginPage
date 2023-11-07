@@ -24,6 +24,16 @@ button {
     font-weight: bold;
 }
 
+.input{
+    background: rgba(13, 13, 13, 0.5) ;
+    border:none;
+    color:yellow;
+    border-radius: 5px;
+    outline:none;
+    font-weight: bold;
+    padding-left: 5px;
+}
+
 body{position:relative;}
 
 .container{
