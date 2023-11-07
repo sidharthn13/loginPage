@@ -33,6 +33,19 @@ function close_login_popup(){
     document.querySelector(".log_in_popup").style.display='none'
 }
 
+//display account sign up popup
+function display_sign_up_popup(){
+    document.querySelector('.container').style.display = 'none'
+    document.querySelector(".sign_up_popup").style.display='grid'
+}
+
+//close account creation popup
+function close_sign_up_popup(){
+    clear_input_fields();
+    document.querySelector('.container').style.display = 'block'
+    document.querySelector(".sign_up_popup").style.display='none'
+}
+
 
 function account_login(){
     if(validate()){
