@@ -243,3 +243,17 @@ font-weight: bold;}
     position:absolute;
     right:0px;
 }
+
+#snackbar{
+    display:none;        /* set to grid in case of malfunction */
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    color: white;
+    background: rgba(13, 13, 13, 0.6);
+    width:40vw;
+    height:10vh;
+    left:30vw;
+    opacity:0.8;
+}

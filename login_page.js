@@ -5,7 +5,7 @@ if(localStorage.getItem('users') == null){
     localStorage.setItem('users',JSON.stringify(users));
 }
 
-form.addEventListener('submit',(e)=>{
+form2.addEventListener('submit',(e)=>{
     e.preventDefault();
     account_create();
 })
@@ -26,13 +26,14 @@ function close_login_popup(){
 
 //display account sign up popup
 function display_sign_up_popup(){
+    clear_sign_up_fields()
     document.querySelector('.container').style.display = 'none'
     document.querySelector(".sign_up_popup").style.display='grid'
 }
 
 //close account creation popup
 function close_sign_up_popup(){
-    clear_input_fields();
+    clear_sign_up_fields();
     document.querySelector('.container').style.display = 'block'
     document.querySelector(".sign_up_popup").style.display='none'
 }
@@ -45,22 +46,22 @@ function account_login(){
     user_pass=document.getElementById('password_login').value 
     
     if(users[`${email_id_login}`]==undefined){
-        alert('No such user exists');
+        generate_toast('No such user exists');
         clear_input_fields();
     }
     else{
         if(decrypt(users[`${email_id_login}`]['password']) != user_pass ){
-            alert('Wrong password_login');
+            generate_toast('Wrong password_login');
             document.getElementById('password_login').value = "";}
         else{
-            alert('Successfully logged in');
+            generate_toast('Successfully logged in');
             clear_input_fields()
             current_user = users[`${email_id_login}`]['user_id']
             proceed_to_user_portal();
         }
         
         }}
-    else{alert('Please fill in all fields')}    
+    else{generate_toast('Please fill in all fields')}    
         
     }
 
@@ -82,15 +83,16 @@ function account_create(){
         users[`${email_id}`] = obj;
         localStorage.setItem('users',JSON.stringify(users))
         
-        alert('Account created successfully')
+        generate_toast('Account created successfully')
         
+        close_sign_up_popup()
+
     }
     else{
-        alert('User has an existing account')
+        generate_toast('User has an existing account')
+        clear_sign_up_fields()
         
     }
-    clear_input_fields()
-    close_sign_up_popup()
 }
 
 //function that clears the input form
@@ -160,7 +162,6 @@ function validate_sign_up_email(){
         return true;
     }
     else{
-        alert('Please enter a valid Email-ID');
         document.getElementById('email_id_sign_up').value=''            
     } 
 }
@@ -173,25 +174,22 @@ function validate_sign_up_phone(){
         return true;
     }
     else{
-        alert('Please enter a valid phone number');
         document.getElementById('phone_number').value=''
+    
     }
 }
 
 //function to validate username field on signup
 function validate_sign_up_username(){
-    if(document.getElementById('user_name').value ==''){
-        alert('Please fill in username')
-    }
-    else{
-        return true;}
+    if(document.getElementById('user_name').value !=''){
+        return true}
 }
 //function to validate password field on signup
 function validate_sign_up_password(){
-    if(document.getElementById('password_sign_up').value == ''){
-        alert('Please enter your password')
+    if(document.getElementById('password_sign_up').value != ''){
+        return true
     }
-    else{return true;}
+
 }
 
 //function that checks validity of all fields on signup
@@ -200,6 +198,25 @@ function validate_sign_up(){
     && validate_sign_up_username() && validate_sign_up_password()){
         account_create();}
     else{
-        alert('Please enter valid data')
+        generate_toast('Please enter valid data')
     }
+}
+
+
+//function to activate toast messages
+function generate_toast(str){
+    let snack =document.getElementById('snackbar')
+    snack.style.display= 'grid';
+    snack.innerText = str
+    setTimeout(()=>{document.getElementById('snackbar').style.display = 'none' ;
+                    document.getElementById('snackbar').innerText = ''},2000)
+}
+
+//function to clear sign up fields
+function clear_sign_up_fields(){
+    document.getElementById('email_id_sign_up').value='' 
+    document.getElementById('phone_number').value=''
+    document.getElementById('user_name').value =''
+    document.getElementById('password_sign_up').value = ''
+
 }
