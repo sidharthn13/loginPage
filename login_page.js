@@ -10,15 +10,6 @@ form.addEventListener('submit',(e)=>{
     account_create();
 })
 
-function log_in(){
-    display_login_popup();
-
-}
-
-function sign_up(){
-    
-    //needs to e complete
-}
 
 //display account login popup
 function display_login_popup(){
@@ -48,22 +39,23 @@ function close_sign_up_popup(){
 
 
 function account_login(){
-    if(validate()){
+    if(validate_login()){
     users = JSON.parse(localStorage.getItem('users'))
     email_id_login=document.getElementById('email_id_login').value
     user_pass=document.getElementById('password_login').value 
+    
     if(users[`${email_id_login}`]==undefined){
         alert('No such user exists');
         clear_input_fields();
     }
     else{
-        if(users[`${email_id_login}`] != user_pass ){
+        if(users[`${email_id_login}`]['password'] != user_pass ){
             alert('Wrong password_login');
             document.getElementById('password_login').value = "";}
         else{
             alert('Successfully logged in');
             clear_input_fields()
-            current_user = email_id_login
+            current_user = users[`${email_id_login}`]['user_id']
             proceed_to_user_portal();
         }
         
@@ -75,24 +67,26 @@ function account_login(){
 
 //function gets called when create button is pressed
 function account_create(){
-    if(validate()){
+    
     users = JSON.parse(localStorage.getItem('users'))
-    email_id_login=document.getElementById('email_id_login').value
-    user_pass=document.getElementById('password_login').value 
-    if(users[`${email_id_login}`]==undefined){
-        users[`${email_id_login}`] = user_pass;
+    email_id=document.getElementById('email_id_sign_up').value
+    password=document.getElementById('password_sign_up').value 
+    user_id=document.getElementById('user_name').value 
+    phone=document.getElementById('phone_number').value 
+    
+    const obj ={user_id:user_id,
+                phone:phone,
+                password:password} //write a hashing algo here
+
+    if(users[`${email_id}`]==undefined){
+        users[`${email_id}`] = obj;
         localStorage.setItem('users',JSON.stringify(users))
-        account_creation_in_progress = false
+        
         alert('Account created successfully')
         clear_input_fields()
-        toggle_button_display()
-        close_login_popup()
+        close_sign_up_popup()
         
     }
-    else{
-        alert('Account already exists');
-        clear_input_fields();}}
-    else{alert('Please fill in all fields')}
 }
 
 //function that clears the input form
@@ -102,7 +96,7 @@ function clear_input_fields(){
 }
 
 //create an input field validating string
-function validate(){
+function validate_login(){
     if(document.getElementById('email_id_login').value =='' ||
     document.getElementById('password_login').value == ''){
         return false
