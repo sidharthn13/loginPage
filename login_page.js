@@ -1,3 +1,6 @@
+
+
+
 let users={}
 let current_user
 
@@ -58,6 +61,8 @@ function account_login(){
             generate_toast('Successfully logged in');
             clear_input_fields()
             current_user = users[`${email_id_login}`]['user_id']
+
+
             proceed_to_user_portal();
         }
         
@@ -116,16 +121,18 @@ function validate_login(){
 function proceed_to_user_portal(){
     
     document.querySelector(".log_in_popup").style.display='none'
-    window.location.href = "welcome_user.html"       //use redirect function here
-    document.getElementById('user_portal').innerHTML = `
-    Welcome, ${current_user}`
-    document.querySelector(".bubbles").style.display ='flex'
+    let json = JSON.stringify({logged_in:'yes',user:`${current_user}`})
+    document.cookie =`activity=${json}`
+    redirect()      //use redirect function here
+
 }
 
 //gets executed when sign out is pressed
 function reset(){
-    document.getElementById('user_portal').innerHTML="";
-    window.location.href = "index.html"
+    
+    let json = JSON.stringify({logged_in:'no',user:``})
+    document.cookie =`activity=${json}`
+    redirect()
 
 }
 
@@ -220,4 +227,25 @@ function clear_sign_up_fields(){
 
 }
 
-function redirect(){}
+function redirect(){
+    let log_in_status
+    let user
+    let cookie = document.cookie;
+    cookie_arr = cookie.split(';')
+    console.log(cookie_arr)
+        for(let i = 0; i<cookie_arr.length; i++){
+            if(cookie_arr[i].split('=')[0] == 'activity'){
+                let json = JSON.parse(cookie_arr[i].split('=')[1])
+                log_in_status = json['logged_in']
+                user = json['user']
+            }
+        }
+    console.log(log_in_status)
+    
+    if(log_in_status == 'yes'){window.location.href = 'welcome_user.html'
+    document.getElementsByClassName('user_portal')[0].innerText += `, ${user}`}   //bug here
+    
+    else{window.location.href = 'index.html'}
+}
+
+
