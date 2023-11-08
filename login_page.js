@@ -123,18 +123,10 @@ function proceed_to_user_portal(){
     document.querySelector(".log_in_popup").style.display='none'
     let json = JSON.stringify({logged_in:'yes',user:`${current_user}`})
     document.cookie =`activity=${json}`
-    redirect()      //use redirect function here
+    redirect()      
 
 }
 
-//gets executed when sign out is pressed
-function reset(){
-    
-    let json = JSON.stringify({logged_in:'no',user:``})
-    document.cookie =`activity=${json}`
-    redirect()
-
-}
 
 
 //function to encrypt password
@@ -243,10 +235,7 @@ function redirect(){
     console.log(log_in_status)
     
     if(log_in_status == 'yes'){window.location.href = 'welcome_user.html'
-    document.getElementsByClassName('user_portal')[0].innerText += `, ${user}`}   //bug here
-    
-    else{window.location.href = 'index.html'}
-}
+}}
 
 
 

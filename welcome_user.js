@@ -1,6 +1,7 @@
 
 cookie_validation()
 
+document.getElementById('user_portal').innerText += `, ${get_user()}`
 
 function reset(){
     
@@ -25,15 +26,26 @@ function redirect(){
         }
     console.log(log_in_status)
     
-    if(log_in_status == 'yes'){window.location.href = 'welcome_user.html'
-    document.getElementsByClassName('user_portal')[0].innerText += `, ${user}`}   //bug here
-    
-    else{window.location.href = 'index.html'}
-}
+    if(log_in_status == 'no'){window.location.href = 'index.html'
+}}
 
 
 function cookie_validation(){
     if(!document.cookie){
         window.location.href = "index.html"
     }
+}
+
+//function to get user name from cookie
+function get_user(){
+    let user
+    let cookie = document.cookie;
+    cookie_arr = cookie.split(';')
+        for(let i = 0; i<cookie_arr.length; i++){
+            if(cookie_arr[i].split('=')[0] == 'activity'){
+                let json = JSON.parse(cookie_arr[i].split('=')[1])
+                user = json['user']
+            }
+        }
+       return user 
 }
