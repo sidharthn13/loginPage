@@ -108,7 +108,13 @@ function validate_login() {
 function proceed_to_user_portal() {
   document.querySelector(".log_in_popup").style.display = "none";
   let json = JSON.stringify({ logged_in: "yes", user: `${current_user}` });
-  document.cookie = `activity=${json}`;
+
+  //set cookie expiry
+  let d = new Date();
+  d.setTime(d.getTime() + 1 * 24 * 60 * 60 * 1000); 
+  let expires = "expires=" + d.toUTCString();
+
+  document.cookie = `activity=${json};${expires}`;
   redirect();
 }
 

@@ -4,7 +4,12 @@ document.getElementById("user_portal").innerText += `, ${get_user()}`;
 
 function reset() {
   let json = JSON.stringify({ logged_in: "no", user: `` });
-  document.cookie = `activity=${json}`;
+
+  let d = new Date();
+  d.setTime(d.getTime() + 1 * 24 * 60 * 60 * 1000);
+  let expires = "expires=" + d.toUTCString();
+
+  document.cookie = `activity=${json};${expires}`;
   redirect();
 }
 
