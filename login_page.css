@@ -1,277 +1,266 @@
 @font-face {
-    font-family: welcome_font;
-    src: url(/Assets/font.ttf);
+  font-family: welcome_font;
+  src: url(/Assets/font.ttf);
 }
 @font-face {
-    font-family: button_font;
-    src: url(/Assets/buttonFont.ttf);
+  font-family: button_font;
+  src: url(/Assets/buttonFont.ttf);
 }
 button {
-    box-shadow: 0 0 5px cyan,
-    0 0 25px cyan;
-    background-color: cyan;
-    border:none;
-    border-radius: 10px;
-    font-family: button_font;
-    }
-    button:hover {
-    box-shadow: 0 0 5px cyan,
-    0 0 25px cyan, 0 0 50px cyan,
-    0 0 100px cyan, 0 0 200px cyan;
-    }
-.labels{
-    font-family: button_font;
-    font-weight: bold;
+  box-shadow: 0 0 5px cyan, 0 0 25px cyan;
+  background-color: cyan;
+  border: none;
+  border-radius: 10px;
+  font-family: button_font;
+}
+button:hover {
+  box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan,
+    0 0 200px cyan;
+}
+.labels {
+  font-family: button_font;
+  font-weight: bold;
 }
 
-.input{
-    background: rgba(13, 13, 13, 0.5) ;
-    border:none;
-    color:yellow;
-    border-radius: 5px;
-    outline:none;
-    font-weight: bold;
-    padding-left: 5px;
+.input {
+  background: rgba(13, 13, 13, 0.5);
+  border: none;
+  color: yellow;
+  border-radius: 5px;
+  outline: none;
+  font-weight: bold;
+  padding-left: 5px;
 }
 
-body{position:relative;}
-
-.container{
-    position:absolute;
-    width:20vw;
-    height:70vh;
-    left:40vw;
-    top:15vh;
-    border-radius: 20px;
-    opacity:0.8;
-    background:rgba(13, 13, 13, 0.5);
+body {
+  position: relative;
 }
 
-#log_in_button{
-    position:absolute;
-    
-    width:40%;
-    left:30%;
-    height:10%;
-    top:35%;
-    border-radius: 5px;
-    cursor:pointer;
-    
-    
+.container {
+  position: absolute;
+  width: 20vw;
+  height: 70vh;
+  left: 40vw;
+  top: 15vh;
+  border-radius: 20px;
+  opacity: 0.8;
+  background: rgba(13, 13, 13, 0.5);
 }
 
-#sign_up_button{
-    position:absolute;
-    width:40%;
-    left:30%;
-    height:10%;
-    top:55%;
-    border-radius: 5px;
-    cursor:pointer;
-    
+#log_in_button {
+  position: absolute;
+
+  width: 40%;
+  left: 30%;
+  height: 10%;
+  top: 35%;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-
-
-.log_in_popup{
-    display:none;   /* set to grid in case of malfunction */
-    justify-content: center;
-    align-items: center;
-    position:absolute;
-    width:40vw;
-    height:60vh;
-    background: rgba(13, 13, 13, 0.5);
-    border-radius: 20px;
-    left:30vw;
-    top:20vh;
+#sign_up_button {
+  position: absolute;
+  width: 40%;
+  left: 30%;
+  height: 10%;
+  top: 55%;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-
-.sign_up_popup{
-    display:none;   /* set to grid in case of malfunction */
-    justify-content: center;
-    align-items: center;
-    position:absolute;
-    width:40vw;
-    height:60vh;
-    background: rgba(13, 13, 13, 0.5);
-    border-radius: 20px;
-    left:30vw;
-    top:20vh;
+.log_in_popup {
+  display: none; /* set to grid in case of malfunction */
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 40vw;
+  height: 60vh;
+  background: rgba(13, 13, 13, 0.5);
+  border-radius: 20px;
+  left: 30vw;
+  top: 20vh;
 }
 
-.labels{color:beige;
-font-weight: bold;}
-
-#account_entry{
-    display : block;
-    position:absolute;
-    width:30%;
-    left:52%;
-    margin-top: 20px;
+.sign_up_popup {
+  display: none; /* set to grid in case of malfunction */
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 40vw;
+  height: 60vh;
+  background: rgba(13, 13, 13, 0.5);
+  border-radius: 20px;
+  left: 30vw;
+  top: 20vh;
 }
 
-#account_creation{
-    display:block;
-    position:absolute;
-    width:30%;
-    left:52%;
-    margin-top: 20px;
-}
-#close_button_login{
-    position:absolute;
-    width:30%;
-    left:18%;
-    margin-top: 20px;   
+.labels {
+  color: beige;
+  font-weight: bold;
 }
 
-#close_button_sign_up{
-    position:absolute;
-    width:30%;
-    left:18%;
-    margin-top: 20px;
-}
-    @media only screen and (max-width: 1130px) {
-    .container{
-        position:absolute;
-        width:50vw;
-        height:70vh;
-        left:25vw;
-        top:15vh;
-        border-radius: 20px;
-        opacity:0.8;
-        background:rgba(13, 13, 13, 0.5);
-    }
-    
+#account_entry {
+  display: block;
+  position: absolute;
+  width: 30%;
+  left: 52%;
+  margin-top: 20px;
 }
 
-@media only screen and (max-width:760px){
-    .log_in_popup{
-        display:none;   /* set to grid in case of malfunction */
-        justify-content: center;
-        align-items: center;
-        position:absolute;
-        width:70vw;
-        height:80vh;
-        background: rgba(13, 13, 13, 0.5);
-        border-radius: 20px;
-        left:15vw;
-        top:10vh;
-    }
-    .sign_up_popup{
-        display:none;   /* set to grid in case of malfunction */
-        justify-content: center;
-        align-items: center;
-        position:absolute;
-        width:70vw;
-        height:80vh;
-        background: rgba(13, 13, 13, 0.5);
-        border-radius: 20px;
-        left:15vw;
-        top:10vh;
-    }
-
+#account_creation {
+  display: block;
+  position: absolute;
+  width: 30%;
+  left: 52%;
+  margin-top: 20px;
+}
+#close_button_login {
+  position: absolute;
+  width: 30%;
+  left: 18%;
+  margin-top: 20px;
 }
 
-@media only screen and (max-width:450px){
-    
-    
-    .container{
-        position:absolute;
-        width:70vw;
-        height:70vh;
-        left:15vw;
-        top:15vh;
-        border-radius: 20px;
-        opacity:0.8;
-        background:rgba(13, 13, 13, 0.5);
-    }
-    
-    .log_in_popup{
-        display:none;   /* set to grid in case of malfunction */
-        justify-content: center;
-        align-items: center;
-        position:absolute;
-        width:96vw;
-        height:80vh;
-        background: rgba(13, 13, 13, 0.5);
-        left: 2vw;
-        top:10vh;
-    
-    }
-
-    .sign_up_popup{
-        display:none;   /* set to grid in case of malfunction */
-        justify-content: center;
-        align-items: center;
-        position:absolute;
-        width:96vw;
-        height:80vh;
-        background: rgba(13, 13, 13, 0.5);
-        left: 2vw;
-        top:10vh;
-    
-    }
-    
-    
-    #table{font-size: 15px;}
-    #table2{font-size: 15px;}
-
-
-    #account_entry{
-        display : block;
-        position:absolute;
-        width:50%;
-        left:25%;
-        margin-top: 20px;
-    }
-    
-    #account_creation{
-        display:block;
-        position:absolute;
-        width:50%;
-        left:25%;
-        margin-top: 20px;}
-    
-    #close_button_login{
-        position:absolute;
-        width:50%;
-        bottom:20%;
-        left:25%;
-        margin-top: 20px;
-    }
-
-    #close_button_sign_up{
-        position:absolute;
-        width:50%;
-        bottom:20%;
-        left:25%;
-        margin-top: 20px;
-    }
+#close_button_sign_up {
+  position: absolute;
+  width: 30%;
+  left: 18%;
+  margin-top: 20px;
 }
-
-@media only screen and (min-width:1200px){
-    body{background-image: url('Assets/website_background');
-        background-repeat: no-repeat;
-        background-size: cover;}
-}
-
-
-
-#snackbar{
-    display:none;        /* set to grid in case of malfunction */
+@media only screen and (max-width: 1130px) {
+  .container {
     position: absolute;
-    align-items: center;
-    justify-content: center;
+    width: 50vw;
+    height: 70vh;
+    left: 25vw;
+    top: 15vh;
     border-radius: 20px;
-    color: white;
-    background: rgba(13, 13, 13, 0.6);
-    width:40vw;
-    height:10vh;
-    left:30vw;
-    opacity:0.8;
+    opacity: 0.8;
+    background: rgba(13, 13, 13, 0.5);
+  }
 }
 
+@media only screen and (max-width: 760px) {
+  .log_in_popup {
+    display: none; /* set to grid in case of malfunction */
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 70vw;
+    height: 80vh;
+    background: rgba(13, 13, 13, 0.5);
+    border-radius: 20px;
+    left: 15vw;
+    top: 10vh;
+  }
+  .sign_up_popup {
+    display: none; /* set to grid in case of malfunction */
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 70vw;
+    height: 80vh;
+    background: rgba(13, 13, 13, 0.5);
+    border-radius: 20px;
+    left: 15vw;
+    top: 10vh;
+  }
+}
 
+@media only screen and (max-width: 450px) {
+  .container {
+    position: absolute;
+    width: 70vw;
+    height: 70vh;
+    left: 15vw;
+    top: 15vh;
+    border-radius: 20px;
+    opacity: 0.8;
+    background: rgba(13, 13, 13, 0.5);
+  }
 
+  .log_in_popup {
+    display: none; /* set to grid in case of malfunction */
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 96vw;
+    height: 80vh;
+    background: rgba(13, 13, 13, 0.5);
+    left: 2vw;
+    top: 10vh;
+  }
 
+  .sign_up_popup {
+    display: none; /* set to grid in case of malfunction */
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 96vw;
+    height: 80vh;
+    background: rgba(13, 13, 13, 0.5);
+    left: 2vw;
+    top: 10vh;
+  }
+
+  #table {
+    font-size: 15px;
+  }
+  #table2 {
+    font-size: 15px;
+  }
+
+  #account_entry {
+    display: block;
+    position: absolute;
+    width: 50%;
+    left: 25%;
+    margin-top: 20px;
+  }
+
+  #account_creation {
+    display: block;
+    position: absolute;
+    width: 50%;
+    left: 25%;
+    margin-top: 20px;
+  }
+
+  #close_button_login {
+    position: absolute;
+    width: 50%;
+    bottom: 20%;
+    left: 25%;
+    margin-top: 20px;
+  }
+
+  #close_button_sign_up {
+    position: absolute;
+    width: 50%;
+    bottom: 20%;
+    left: 25%;
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  body {
+    background-image: url("Assets/website_background");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+#snackbar {
+  display: none; /* set to grid in case of malfunction */
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  color: white;
+  background: rgba(13, 13, 13, 0.6);
+  width: 40vw;
+  height: 10vh;
+  left: 30vw;
+  opacity: 0.8;
+}

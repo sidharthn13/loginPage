@@ -1,109 +1,165 @@
 <!DOCTYPE html>
-<html lang ="en">
-    <head>
-        <title>Login Page</title>
-        <link rel = "stylesheet" href="login_page.css">
-    </head>
-    <body background="Assets/website_background">
-        <div class="container">
-        
-                <button type="button" id="log_in_button"  onclick="display_login_popup()">Log In</button>
-            
-                <button id="sign_up_button" onclick="display_sign_up_popup()">Sign Up</button>
-            
-        </div>
+<html lang="en">
+  <head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login_page.css" />
+  </head>
+  <body background="Assets/website_background">
+    <div class="container">
+      <button type="button" id="log_in_button" onclick="display_login_popup()">
+        Log In
+      </button>
 
-        <div class="log_in_popup">
-            
-               <form id="'form">
-                <table id="table">
-                    <tr>
-                        <div id='user_id'>
-                        <td> 
-                            <label for="email_id_login" class='labels'>Email: </label></td>
-                        <td><input type="text" class="input" id="email_id_login" name="email_id_login" required>
-                        </td></div>
-                    </tr>
-                    <tr>    
-                        <div id="pass_word" >
-                            <td>
-                                <label for="password_login"  class='labels'>Password: </label></td>
-                                <td><input type="text" class="input" id="password_login" name="password_login" maxlength="15" required>
-                                
-                            </td></div>
-                    </tr>
-                </table>
-                <button type="button" id="account_entry" onclick="account_login()">Log In</button>
-                <button type="button" id="close_button_login" onclick="close_login_popup()">Cancel</button>
-                </form>
-        </div>
+      <button id="sign_up_button" onclick="display_sign_up_popup()">
+        Sign Up
+      </button>
+    </div>
 
-        <!--signup popup-->
-        <div class="sign_up_popup">
-            <form id="form2">
-               
-                <table id="table2">
-                    <tr>
-                        
-                        <td> 
-                            <label for="email_id_sign_up" class='labels'>Email: </label></td>
-                        <td><input type="text" class="input" id="email_id_sign_up" name="email_id_sign_up" required>
-                        </td>
-                    </tr>
-                    <tr>    
-                        
-                            <td>
-                                <label for="password_sign_up"  class='labels'>Password: </label></td>
-                                <td><input type="text" class="input" id="password_sign_up" name="password_sign_up" maxlength="15" required>
-                                
-                            </td>
-                    </tr>
-                    <tr>    
-                        
-                        <td>
-                            <label for="user_name"  class='labels'>Username: </label></td>
-                            <td><input type="text" class="input" id="user_name" name="user_name" maxlength="15" required>
-                            
-                        </td>
-                </tr>
-                <tr>    
-                        
-                    <td>
-                        <label for="phone_number"  class='labels'>Phone: </label></td>
-                        <td><input type="text" class="input" id="phone_number" name="phone_number" maxlength="15" required>
-                        
-                    </td>
-                </tr>
-                </table>
-                
-                <button type="submit" id="account_creation" onclick="validate_sign_up()">Create</button>
-                <button type="button" id="close_button_sign_up" onclick="close_sign_up_popup()">Cancel</button>
-            </form>
-        </div>
-        
-        <!--snackbar-->
-        <div id = 'snackbar'></div>
+    <div class="log_in_popup">
+      <form id="'form">
+        <table id="table">
+          <tr>
+            <div id="user_id">
+              <td>
+                <label for="email_id_login" class="labels">Email: </label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  class="input"
+                  id="email_id_login"
+                  name="email_id_login"
+                  required
+                />
+              </td>
+            </div>
+          </tr>
+          <tr>
+            <div id="pass_word">
+              <td>
+                <label for="password_login" class="labels">Password: </label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  class="input"
+                  id="password_login"
+                  name="password_login"
+                  maxlength="15"
+                  required
+                />
+              </td>
+            </div>
+          </tr>
+        </table>
+        <button type="button" id="account_entry" onclick="account_login()">
+          Log In
+        </button>
+        <button
+          type="button"
+          id="close_button_login"
+          onclick="close_login_popup()"
+        >
+          Cancel
+        </button>
+      </form>
+    </div>
 
+    <!--signup popup-->
+    <div class="sign_up_popup">
+      <form id="form2">
+        <table id="table2">
+          <tr>
+            <td>
+              <label for="email_id_sign_up" class="labels">Email: </label>
+            </td>
+            <td>
+              <input
+                type="text"
+                class="input"
+                id="email_id_sign_up"
+                name="email_id_sign_up"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="password_sign_up" class="labels">Password: </label>
+            </td>
+            <td>
+              <input
+                type="text"
+                class="input"
+                id="password_sign_up"
+                name="password_sign_up"
+                maxlength="15"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="user_name" class="labels">Username: </label>
+            </td>
+            <td>
+              <input
+                type="text"
+                class="input"
+                id="user_name"
+                name="user_name"
+                maxlength="15"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="phone_number" class="labels">Phone: </label>
+            </td>
+            <td>
+              <input
+                type="text"
+                class="input"
+                id="phone_number"
+                name="phone_number"
+                maxlength="15"
+                required
+              />
+            </td>
+          </tr>
+        </table>
 
-       
-        <script src="login_page.js"></script>
-    
-        <!--animation-->
-        <div class="bubbles">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+        <button
+          type="submit"
+          id="account_creation"
+          onclick="validate_sign_up()"
+        >
+          Create
+        </button>
+        <button
+          type="button"
+          id="close_button_sign_up"
+          onclick="close_sign_up_popup()"
+        >
+          Cancel
+        </button>
+      </form>
+    </div>
 
-        </div>
+    <!--snackbar-->
+    <div id="snackbar"></div>
 
-    </body>
-    
+    <script src="login_page.js"></script>
+
+    <!--animation-->
+    <div class="bubbles">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </body>
 </html>
-
-
-
-
-
