@@ -49,7 +49,7 @@ function account_login(){
     email_id_login=document.getElementById('email_id_login').value
     user_pass=document.getElementById('password_login').value 
     
-    if(users[`${email_id_login}`]==undefined){
+    if(!(users[`${email_id_login}`])){
         generate_toast('No such user exists');
         clear_input_fields();
     }
@@ -85,7 +85,7 @@ function account_create(){
                 phone:phone,
                 password:encrypt(password)} //write a hashing algo here
 
-    if(users[`${email_id}`]==undefined){
+    if(!(users[`${email_id}`])){
         users[`${email_id}`] = obj;
         localStorage.setItem('users',JSON.stringify(users))
         
@@ -247,5 +247,6 @@ function redirect(){
     
     else{window.location.href = 'index.html'}
 }
+
 
 
