@@ -257,36 +257,6 @@ font-weight: bold;}
 }
 
 
-#user_portal{
-    display: none;
-    position:absolute;
-    left:50%;
-    top:50vh;
-    transform: translate(-50%,-50%);
-    font-size: 30px;
-    font-weight: bold;
-    color:antiquewhite;
-    font-family: welcome_font;
-
-}
-#sign_out_button{
-    display:none;
-    position:absolute;
-    right:0px;
-    color: white;
-    font-weight: bold;
-    box-shadow: 0 0 5px red,
-    0 0 25px red;
-    background-color: red;
-    border:none;
-    border-radius: 5px;
-    font-family: button_font;
-    }
-#sign_out_button:hover {
-    box-shadow: 0 0 5px red,
-    0 0 25px red, 0 0 50px red,
-    0 0 100px red, 0 0 200px red;
-}
 
 #snackbar{
     display:none;        /* set to grid in case of malfunction */
@@ -303,24 +273,5 @@ font-weight: bold;}
 }
 
 
-.bubbles{
-    top:10vh;
-    position: absolute;
-    display:none;    /*set to flex in case of bug*/
-    justify-content: center;
-    align-items: center;
-}
-.bubbles span{
-    width:7vw;
-    height:10vh;
-    border-radius: 50%;
-    background: cyan;
-    border:none;
-    margin:6vw;
-    box-shadow: 0vh 0vh 15vh cyan;
-    animation : animate 15s linear infinite;
-}
 
-@keyframes animate{
-    0%{transform: translate(100vh) scale(0);}
-}
+

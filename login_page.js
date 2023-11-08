@@ -116,8 +116,7 @@ function validate_login(){
 function proceed_to_user_portal(){
     
     document.querySelector(".log_in_popup").style.display='none'
-    document.getElementById('user_portal').style.display = 'block'
-    document.getElementById('sign_out_button').style.display = 'block'
+    window.location.href = "welcome_user.html"       //use redirect function here
     document.getElementById('user_portal').innerHTML = `
     Welcome, ${current_user}`
     document.querySelector(".bubbles").style.display ='flex'
@@ -125,11 +124,8 @@ function proceed_to_user_portal(){
 
 //gets executed when sign out is pressed
 function reset(){
-    document.getElementById('sign_out_button').style.display = 'none'
     document.getElementById('user_portal').innerHTML="";
-    document.getElementById('user_portal').style.display = 'none'
-    document.querySelector(".container").style.display='block'
-    document.querySelector(".bubbles").style.display ='none'
+    window.location.href = "index.html"
 
 }
 
@@ -223,3 +219,5 @@ function clear_sign_up_fields(){
     document.getElementById('password_sign_up').value = ''
 
 }
+
+function redirect(){}
