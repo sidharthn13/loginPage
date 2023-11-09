@@ -221,9 +221,9 @@ function redirect() {
   cookie_arr = cookie.split(";");
   for (let i = 0; i < cookie_arr.length; i++) {
     if (cookie_arr[i].split("=")[0] == "activity") {
-      let json = JSON.parse(cookie_arr[i].split("=")[1]);
-      log_in_status = json["logged_in"];
-      user = json["user"];
+      const user_status = JSON.parse(cookie_arr[i].split("=")[1]);
+      log_in_status = user_status["logged_in"];
+      user = user_status["user"];
     }
   }
 

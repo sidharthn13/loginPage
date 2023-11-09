@@ -2,34 +2,16 @@ cookie_validation(); //redirect to login page if valid cookie not found
 
 document.getElementById("user_portal").innerText += `, ${get_user()}`;
 
-function reset() {
+function sign_out() {
   const user_status = JSON.stringify({ logged_in: "no", user: `` });
 
-  let cookie_expiry = new Date();
-  cookie_expiry.setTime(cookie_expiry.getTime() + 1 * 24 * 60 * 60 * 1000);
-  let expires = "expires=" + cookie_expiry.toUTCString();
+
+  const expires="expires=Thu, 01 Jan 1970 00:00:00 UTC"
 
   document.cookie = `activity=${user_status};${expires}`;
-  redirect();
+  window.location.href='index.html';
 }
 
-function redirect() {
-  let log_in_status;
-  let user;
-  let cookie = document.cookie;
-  cookie_arr = cookie.split(";");
-  for (let i = 0; i < cookie_arr.length; i++) {
-    if (cookie_arr[i].split("=")[0] == "activity") {
-      let json = JSON.parse(cookie_arr[i].split("=")[1]);
-      log_in_status = json["logged_in"];
-      user = json["user"];
-    }
-  }
-
-  if (log_in_status === "no") {
-    window.location.href = "index.html";
-  }
-}
 
 //function to check cookie validity
 function cookie_validation() {
@@ -42,12 +24,14 @@ function cookie_validation() {
 function get_user() {
   let user;
   let cookie = document.cookie;
-  cookie_arr = cookie.split(";");
-  for (let i = 0; i < cookie_arr.length; i++) {
-    if (cookie_arr[i].split("=")[0] == "activity") {
-      let json = JSON.parse(cookie_arr[i].split("=")[1]);
-      user = json["user"];
+  cookie_array = cookie.split(";");
+  for (let i = 0; i < cookie_array.length; i++) {
+    if (cookie_array[i].split("=")[0] == "activity") {
+      const user_status = JSON.parse(cookie_array[i].split("=")[1]);
+      user = user_status["user"];
     }
   }
   return user;
 }
+
+
