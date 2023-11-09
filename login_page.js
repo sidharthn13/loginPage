@@ -165,7 +165,7 @@ function validate_sign_up_username() {
 
 //function to validate password field on signup
 function validate_sign_up_password() {
-  return !(document.getElementById("password_sign_up").length == "");
+  return !(document.getElementById("password_sign_up").value == "");
 }
 
 //function that checks validity of all fields on signup
