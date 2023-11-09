@@ -7,7 +7,7 @@ if (!localStorage.getItem("users")) {
 
 form2.addEventListener("submit", (e) => {
   e.preventDefault();
-  account_create();
+  validate_sign_up();
 });
 
 //display account login popup
@@ -143,7 +143,8 @@ function validate_sign_up_email() {
   if (match) {
     return true;
   } else {
-    document.getElementById("email_id_sign_up").value = "";
+    generate_toast("Please enter a valid Gmail ID");
+    return false;
   }
 }
 
@@ -154,31 +155,40 @@ function validate_sign_up_phone() {
   if (match) {
     return true;
   } else {
-    document.getElementById("phone_number").value = "";
+    generate_toast("Please enter valid Indian Phone number");
+    return false;
   }
 }
 
 //function to validate username field on signup
 function validate_sign_up_username() {
-  return !(document.getElementById("user_name").value == "");
+  if (document.getElementById("user_name").value == "") {
+    generate_toast("Please enter a username");
+    return false;
+  } else {
+    return true;
+  }
 }
 
 //function to validate password field on signup
 function validate_sign_up_password() {
-  return !(document.getElementById("password_sign_up").value == "");
+  if (document.getElementById("password_sign_up").value.length < 10) {
+    generate_toast("Password must be 10 characters long");
+    return false;
+  } else {
+    return true;
+  }
 }
 
 //function that checks validity of all fields on signup
 function validate_sign_up() {
   if (
     validate_sign_up_email() &&
+    validate_sign_up_password() &&
     validate_sign_up_phone() &&
-    validate_sign_up_username() &&
-    validate_sign_up_password()
+    validate_sign_up_username()
   ) {
     account_create();
-  } else {
-    generate_toast("Please enter valid data");
   }
 }
 
