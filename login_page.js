@@ -103,14 +103,17 @@ function validate_login() {
 //gets executed after successful login
 function proceed_to_user_portal() {
   document.querySelector(".log_in_popup").style.display = "none";
-  let json = JSON.stringify({ logged_in: "yes", user: `${current_user}` });
+  const user_status = JSON.stringify({
+    logged_in: "yes",
+    user: `${current_user}`,
+  });
 
   //set cookie expiry
-  let d = new Date();
-  d.setTime(d.getTime() + 1 * 24 * 60 * 60 * 1000);
-  let expires = "expires=" + d.toUTCString();
+  let date_object = new Date();
+  date_object.setTime(date_object.getTime() + 1 * 24 * 60 * 60 * 1000);
+  let expires = "expires=" + date_object.toUTCString();
 
-  document.cookie = `activity=${json};${expires}`;
+  document.cookie = `activity=${user_status};${expires}`;
   redirect();
 }
 
