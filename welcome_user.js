@@ -5,13 +5,11 @@ document.getElementById("user_portal").innerText += `, ${get_user()}`;
 function sign_out() {
   const user_status = JSON.stringify({ logged_in: "no", user: `` });
 
-
-  const expires="expires=Thu, 01 Jan 1970 00:00:00 UTC"
+  const expires = "expires=Thu, 01 Jan 1970 00:00:00 UTC";
 
   document.cookie = `activity=${user_status};${expires}`;
-  window.location.href='index.html';
+  window.location.href = "index.html";
 }
-
 
 //function to check cookie validity
 function cookie_validation() {
@@ -33,5 +31,3 @@ function get_user() {
   }
   return user;
 }
-
-
