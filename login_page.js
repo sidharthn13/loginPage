@@ -12,28 +12,32 @@ form2.addEventListener("submit", (e) => {
 
 //display account login popup
 function display_login_popup() {
-  document.querySelector(".login_sign_up_button_container").style.display = "none";
+  document.querySelector(".login_sign_up_button_container").style.display =
+    "none";
   document.querySelector(".log_in_popup").style.display = "grid";
 }
 
 //close account login popup
 function close_login_popup() {
   clear_input_fields();
-  document.querySelector(".login_sign_up_button_container").style.display = "block";
+  document.querySelector(".login_sign_up_button_container").style.display =
+    "block";
   document.querySelector(".log_in_popup").style.display = "none";
 }
 
 //display account sign up popup
 function display_sign_up_popup() {
   clear_sign_up_fields();
-  document.querySelector(".login_sign_up_button_container").style.display = "none";
+  document.querySelector(".login_sign_up_button_container").style.display =
+    "none";
   document.querySelector(".sign_up_popup").style.display = "grid";
 }
 
 //close account creation popup
 function close_sign_up_popup() {
   clear_sign_up_fields();
-  document.querySelector(".login_sign_up_button_container").style.display = "block";
+  document.querySelector(".login_sign_up_button_container").style.display =
+    "block";
   document.querySelector(".sign_up_popup").style.display = "none";
 }
 
@@ -48,11 +52,10 @@ function account_login() {
     } else {
       if (decrypt(users[`${email_id_login}`]["password"]) != user_pass) {
         generate_toast("Wrong password");
-      
       } else {
         generate_toast("Successfully logged in");
         clear_input_fields();
-        current_user = users[`${email_id_login}`]['user_id']
+        current_user = users[`${email_id_login}`]["user_id"];
         proceed_to_user_portal();
       }
     }
@@ -80,7 +83,6 @@ function account_create() {
     close_sign_up_popup();
   } else {
     generate_toast("User has an existing account");
-    
   }
 }
 
@@ -92,10 +94,10 @@ function clear_input_fields() {
 
 //create an input field validating string
 function validate_login() {
-  
-    return (document.getElementById("email_id_login").value != "" &&
-    document.getElementById("password_login").value != "")
-
+  return (
+    document.getElementById("email_id_login").value != "" &&
+    document.getElementById("password_login").value != ""
+  );
 }
 
 //gets executed after successful login
@@ -105,7 +107,7 @@ function proceed_to_user_portal() {
 
   //set cookie expiry
   let d = new Date();
-  d.setTime(d.getTime() + 1 * 24 * 60 * 60 * 1000); 
+  d.setTime(d.getTime() + 1 * 24 * 60 * 60 * 1000);
   let expires = "expires=" + d.toUTCString();
 
   document.cookie = `activity=${json};${expires}`;
@@ -158,15 +160,12 @@ function validate_sign_up_phone() {
 
 //function to validate username field on signup
 function validate_sign_up_username() {
-  if (document.getElementById("user_name").value != "") {
-    return true;
-  }
+  return !(document.getElementById("user_name").value == "");
 }
+
 //function to validate password field on signup
 function validate_sign_up_password() {
-  if (document.getElementById("password_sign_up").value != "") {
-    return true;
-  }
+  return !(document.getElementById("password_sign_up").length == "");
 }
 
 //function that checks validity of all fields on signup
