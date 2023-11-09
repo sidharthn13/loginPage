@@ -218,10 +218,10 @@ function redirect() {
   let log_in_status;
   let user;
   let cookie = document.cookie;
-  cookie_arr = cookie.split(";");
-  for (let i = 0; i < cookie_arr.length; i++) {
-    if (cookie_arr[i].split("=")[0] == "activity") {
-      const user_status = JSON.parse(cookie_arr[i].split("=")[1]);
+  cookie_array = cookie.split(";");
+  for (let i = 0; i < cookie_array.length; i++) {
+    if (cookie_array[i].split("=")[0] == "activity") {
+      const user_status = JSON.parse(cookie_array[i].split("=")[1]);
       log_in_status = user_status["logged_in"];
       user = user_status["user"];
     }
