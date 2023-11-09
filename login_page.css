@@ -261,3 +261,13 @@ body {
   left: 30vw;
   opacity: 0.8;
 }
+
+th {
+  padding-bottom: 5vh;
+  text-shadow: 0px 0px 20px;
+  color: cyan;
+  font-family: button_font;
+}
+td {
+  padding-bottom: 1vh;
+}
