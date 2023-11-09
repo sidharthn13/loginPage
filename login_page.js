@@ -109,9 +109,9 @@ function proceed_to_user_portal() {
   });
 
   //set cookie expiry
-  let date_object = new Date();
-  date_object.setTime(date_object.getTime() + 1 * 24 * 60 * 60 * 1000);
-  let expires = "expires=" + date_object.toUTCString();
+  let cookie_expiry = new Date();
+  cookie_expiry.setTime(cookie_expiry.getTime() + 1 * 24 * 60 * 60 * 1000);
+  let expires = "expires=" + cookie_expiry.toUTCString();
 
   document.cookie = `activity=${user_status};${expires}`;
   redirect();

@@ -3,13 +3,13 @@ cookie_validation(); //redirect to login page if valid cookie not found
 document.getElementById("user_portal").innerText += `, ${get_user()}`;
 
 function reset() {
-  let json = JSON.stringify({ logged_in: "no", user: `` });
+  const user_status = JSON.stringify({ logged_in: "no", user: `` });
 
-  let d = new Date();
-  d.setTime(d.getTime() + 1 * 24 * 60 * 60 * 1000);
-  let expires = "expires=" + d.toUTCString();
+  let cookie_expiry = new Date();
+  cookie_expiry.setTime(cookie_expiry.getTime() + 1 * 24 * 60 * 60 * 1000);
+  let expires = "expires=" + cookie_expiry.toUTCString();
 
-  document.cookie = `activity=${json};${expires}`;
+  document.cookie = `activity=${user_status};${expires}`;
   redirect();
 }
 
@@ -26,7 +26,7 @@ function redirect() {
     }
   }
 
-  if (log_in_status == "no") {
+  if (log_in_status === "no") {
     window.location.href = "index.html";
   }
 }
