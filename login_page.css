@@ -20,6 +20,8 @@ button:hover {
 .labels {
   font-family: button_font;
   font-weight: bold;
+  color: beige;
+  font-weight: bold;
 }
 
 .input {
@@ -36,7 +38,7 @@ body {
   position: relative;
 }
 
-.container {
+.login_sign_up_button_container {
   position: absolute;
   width: 20vw;
   height: 70vh;
@@ -69,7 +71,7 @@ body {
 }
 
 .log_in_popup {
-  display: none; /* set to grid in case of malfunction */
+  display: none;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -82,7 +84,7 @@ body {
 }
 
 .sign_up_popup {
-  display: none; /* set to grid in case of malfunction */
+  display: none;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -94,12 +96,7 @@ body {
   top: 20vh;
 }
 
-.labels {
-  color: beige;
-  font-weight: bold;
-}
-
-#account_entry {
+#account_entry_button {
   display: block;
   position: absolute;
   width: 30%;
@@ -107,28 +104,28 @@ body {
   margin-top: 20px;
 }
 
-#account_creation {
+#account_creation_button {
   display: block;
   position: absolute;
   width: 30%;
   left: 52%;
   margin-top: 20px;
 }
-#close_button_login {
+#cancel_log_in_button {
   position: absolute;
   width: 30%;
   left: 18%;
   margin-top: 20px;
 }
 
-#close_button_sign_up {
+#cancel_sign_up_button {
   position: absolute;
   width: 30%;
   left: 18%;
   margin-top: 20px;
 }
 @media only screen and (max-width: 1130px) {
-  .container {
+  .login_sign_up_button_container {
     position: absolute;
     width: 50vw;
     height: 70vh;
@@ -142,7 +139,7 @@ body {
 
 @media only screen and (max-width: 760px) {
   .log_in_popup {
-    display: none; /* set to grid in case of malfunction */
+    display: none;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -154,7 +151,7 @@ body {
     top: 10vh;
   }
   .sign_up_popup {
-    display: none; /* set to grid in case of malfunction */
+    display: none;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -168,7 +165,7 @@ body {
 }
 
 @media only screen and (max-width: 450px) {
-  .container {
+  .login_sign_up_button_container {
     position: absolute;
     width: 70vw;
     height: 70vh;
@@ -180,7 +177,7 @@ body {
   }
 
   .log_in_popup {
-    display: none; /* set to grid in case of malfunction */
+    display: none;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -192,7 +189,7 @@ body {
   }
 
   .sign_up_popup {
-    display: none; /* set to grid in case of malfunction */
+    display: none;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -210,7 +207,7 @@ body {
     font-size: 15px;
   }
 
-  #account_entry {
+  #account_entry_button {
     display: block;
     position: absolute;
     width: 50%;
@@ -218,7 +215,7 @@ body {
     margin-top: 20px;
   }
 
-  #account_creation {
+  #account_creation_button {
     display: block;
     position: absolute;
     width: 50%;
@@ -226,7 +223,7 @@ body {
     margin-top: 20px;
   }
 
-  #close_button_login {
+  #cancel_log_in_button {
     position: absolute;
     width: 50%;
     bottom: 20%;
@@ -234,7 +231,7 @@ body {
     margin-top: 20px;
   }
 
-  #close_button_sign_up {
+  #cancel_sign_up_button {
     position: absolute;
     width: 50%;
     bottom: 20%;
@@ -252,7 +249,7 @@ body {
 }
 
 #snackbar {
-  display: none; /* set to grid in case of malfunction */
+  display: none;
   position: absolute;
   align-items: center;
   justify-content: center;

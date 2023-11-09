@@ -1,4 +1,4 @@
-cookie_validation();
+cookie_validation(); //redirect to login page if valid cookie not found
 
 document.getElementById("user_portal").innerText += `, ${get_user()}`;
 
@@ -31,6 +31,7 @@ function redirect() {
   }
 }
 
+//function to check cookie validity
 function cookie_validation() {
   if (!document.cookie) {
     window.location.href = "index.html";

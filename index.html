@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="login_page.css" />
   </head>
   <body background="Assets/website_background">
-    <div class="container">
+    <div class="login_sign_up_button_container">
       <button type="button" id="log_in_button" onclick="display_login_popup()">
         Log In
       </button>
@@ -52,12 +52,12 @@
             </div>
           </tr>
         </table>
-        <button type="button" id="account_entry" onclick="account_login()">
+        <button type="button" id="account_entry_button" onclick="account_login()">
           Log In
         </button>
         <button
           type="button"
-          id="close_button_login"
+          id="cancel_log_in_button"
           onclick="close_login_popup()"
         >
           Cancel
@@ -132,14 +132,14 @@
 
         <button
           type="submit"
-          id="account_creation"
+          id="account_creation_button"
           onclick="validate_sign_up()"
         >
           Create
         </button>
         <button
           type="button"
-          id="close_button_sign_up"
+          id="cancel_sign_up_button"
           onclick="close_sign_up_popup()"
         >
           Cancel

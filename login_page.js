@@ -12,28 +12,28 @@ form2.addEventListener("submit", (e) => {
 
 //display account login popup
 function display_login_popup() {
-  document.querySelector(".container").style.display = "none";
+  document.querySelector(".login_sign_up_button_container").style.display = "none";
   document.querySelector(".log_in_popup").style.display = "grid";
 }
 
 //close account login popup
 function close_login_popup() {
   clear_input_fields();
-  document.querySelector(".container").style.display = "block";
+  document.querySelector(".login_sign_up_button_container").style.display = "block";
   document.querySelector(".log_in_popup").style.display = "none";
 }
 
 //display account sign up popup
 function display_sign_up_popup() {
   clear_sign_up_fields();
-  document.querySelector(".container").style.display = "none";
+  document.querySelector(".login_sign_up_button_container").style.display = "none";
   document.querySelector(".sign_up_popup").style.display = "grid";
 }
 
 //close account creation popup
 function close_sign_up_popup() {
   clear_sign_up_fields();
-  document.querySelector(".container").style.display = "block";
+  document.querySelector(".login_sign_up_button_container").style.display = "block";
   document.querySelector(".sign_up_popup").style.display = "none";
 }
 
@@ -48,7 +48,7 @@ function account_login() {
       clear_input_fields();
     } else {
       if (decrypt(users[`${email_id_login}`]["password"]) != user_pass) {
-        generate_toast("Wrong password_login");
+        generate_toast("Wrong password");
         document.getElementById("password_login").value = "";
       } else {
         generate_toast("Successfully logged in");
@@ -71,7 +71,7 @@ function account_create() {
   user_id = document.getElementById("user_name").value;
   phone = document.getElementById("phone_number").value;
 
-  const obj = { user_id: user_id, phone: phone, password: encrypt(password) }; //write a hashing algo here
+  const obj = { user_id: user_id, phone: phone, password: encrypt(password) };
 
   if (!users[`${email_id}`]) {
     users[`${email_id}`] = obj;
