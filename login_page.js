@@ -45,16 +45,14 @@ function account_login() {
 
     if (!users[`${email_id_login}`]) {
       generate_toast("No such user exists");
-      clear_input_fields();
     } else {
       if (decrypt(users[`${email_id_login}`]["password"]) != user_pass) {
         generate_toast("Wrong password");
-        document.getElementById("password_login").value = "";
+      
       } else {
         generate_toast("Successfully logged in");
         clear_input_fields();
-        current_user = users[`${email_id_login}`]["user_id"];
-
+        current_user = users[`${email_id_login}`]['user_id']
         proceed_to_user_portal();
       }
     }
@@ -82,7 +80,7 @@ function account_create() {
     close_sign_up_popup();
   } else {
     generate_toast("User has an existing account");
-    clear_sign_up_fields();
+    
   }
 }
 
@@ -94,14 +92,10 @@ function clear_input_fields() {
 
 //create an input field validating string
 function validate_login() {
-  if (
-    document.getElementById("email_id_login").value == "" ||
-    document.getElementById("password_login").value == ""
-  ) {
-    return false;
-  } else {
-    return true;
-  }
+  
+    return (document.getElementById("email_id_login").value != "" &&
+    document.getElementById("password_login").value != "")
+
 }
 
 //gets executed after successful login
