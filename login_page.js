@@ -77,7 +77,6 @@ function account_create() {
   if (!users[`${email_id}`]) {
     users[`${email_id}`] = obj;
     localStorage.setItem("users", JSON.stringify(users));
-
     generate_toast("Account created successfully");
 
     close_sign_up_popup();
